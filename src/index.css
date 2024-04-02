@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --default-text-color: #121420; /* Default text color */
+  --inputColor: #f0eefc;
+  --purple: #491577;
+  --yellow: #FCA311;
+}
+
+body {
+  color: var(--default-text-color); 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  font-family: Inter;
+}
+
+.myCustomInput {
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  /* background-color: var(--inputColor); */
+  font-family: Montserrat;
+}
+
+.myCustomInput:focus {
+  /* background-color: blue; */
+  outline: none;
+}
+
+.stickyNavbar{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
