@@ -3,7 +3,8 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
-import { IconButton } from '@mui/material';
+import { IconButton, Button } from '@mui/material';
+import EastIcon from '@mui/icons-material/East';
 
 const spanStyle = {
   padding: '20px',
@@ -16,7 +17,8 @@ const divStyle = {
   alignItems: 'center',
   justifyContent: 'center',
   backgroundSize: 'cover',
-  height: '800px'
+  height: '600px',
+  backgroundPosition: 'center',
 }
 const slideImages = [
   {
@@ -51,6 +53,35 @@ const LandingPageContent = () => {
           </div>
         ))} 
       </Slide>
+      <div className='px-4 py-4 flex justify-center'>
+        <p className=' text-reddish font-elegant font-bold text-xl'>
+          Jewelry is a way of keeping memories alive.
+        </p>
+      </div>
+      <div className='flex items-center pt-32 pb-4 pl-4'>
+        <div className='min-w-80'>
+          <img src="GroupPicture.png" alt="" />
+        </div>
+        <div className='w-6/12 mx-auto'>
+          <p className='font-elegant text-5xl font-semibold '>
+            Explore The Beauty Of
+          </p>
+          <p className='font-elegant text-5xl font-semibold text-reddish mt-2'>
+            Achariya Alanka
+          </p>
+          <div className='my-12'>
+            <p className='text-serif text-gray.dark'>
+            Indulge in the exquisite allure of Achariya Alanka's jewelry collection. Discover a world where craftsmanship meets elegance, where each piece tells a story of timeless beauty. From dazzling diamonds to lustrous pearls, immerse yourself in a realm of sophistication and style. Explore the artistry of Achariya Alanka and adorn yourself with the epitome of luxury.
+            </p>
+          </div>
+          <Button variant="text" color="reddish">
+            <p className='capitalize font-elegant text-lg font-bold'>
+              Explore All
+            </p>
+            <EastIcon sx={{fontSize: '18px', ml: '6px'}}/>
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
