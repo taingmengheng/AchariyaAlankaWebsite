@@ -29,6 +29,7 @@ export default {
       sans: ['Inter'],
       serif: ['Montserrat'],
       custom: ['Mr Dafoe'],
+      elegant: ['Cormorant Garamond'],
     },
     extend: {
       spacing: {
