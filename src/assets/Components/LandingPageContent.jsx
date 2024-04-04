@@ -104,7 +104,7 @@ const LandingPageContent = () => {
       </div>
 
       <div className="pt-32 pb-4 px-4">
-        <p className="font-elegant text-5xl font-semibold text-center mb-14">
+        <p className="font-elegant text-5xl font-semibold text-center mb-12">
           Explore By Category
         </p>
         {/* <div className="flex justify-center px-32 mb-6">
