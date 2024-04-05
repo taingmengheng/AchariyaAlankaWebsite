@@ -15,7 +15,7 @@ const Navbar = () => {
             <img src="/OurLogoLetters(1).png" alt="AchariyaAlanakaLogo" />
           </div>
           <div className='flex items-center'>
-            <div className='flex items-center w-64 justify-between border-2 border-border py-1.5 px-4 rounded-sm mr-2 hover:shadow-md hover:shadow-reddish/40 hover:border-reddish'>
+            <div className='flex items-center w-64 justify-between py-1.5 px-4 border-2 border-border rounded-sm mr-2 hover:shadow-md hover:shadow-reddish/40 hover:border-reddish'>
               <input type="text" className='myCustomInput' placeholder='Search'/>
               <SearchIcon fontSize='small' sx={{color: 'gray.dark',}}/>
             </div>
