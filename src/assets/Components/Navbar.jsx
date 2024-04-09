@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import IconButton from '@mui/material/IconButton'
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
@@ -8,14 +8,45 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 
 const Navbar = () => {
 
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true)
+
+  const handleScroll = () => {
+      const currentScrollPos = window.scrollY
+
+      if(currentScrollPos > prevScrollPos){
+          setVisible(false)
+      }else{
+          setVisible(true)
+      }
+
+      setPrevScrollPos(currentScrollPos)
+  }
+
+  useEffect( () => {
+      window.addEventListener('scroll', handleScroll);
+
+      return () => window.removeEventListener('scroll', handleScroll)
+  })
+
   return (
-      <div className='sticky top-0 z-50'>
-        <div id='sticky' className=' bg-white flex justify-between items-center py-2 px-4 border-b border-border'>
-          <div className='w-44'>
+      <div className={`sticky z-50 ${visible ? 'top-0' : ''}`}>
+        <div id='sticky' className=' bg-white flex justify-between items-center px-4'>
+          <div className='w-44 py-4'>
             <img src="/OurLogoLetters(1).png" alt="AchariyaAlanakaLogo" />
           </div>
+
+          <div className='flex items-center bg-white'>
+            <SubNavbarItem title="New & Featured"/>
+            <SubNavbarItem title="Rings"/>
+            <SubNavbarItem title="Charms & Bracelets"/>
+            <SubNavbarItem title="Necklaces"/>
+            <SubNavbarItem title="Earings"/>
+            <SubNavbarItem title="All Items"/>
+          </div>
+
           <div className='flex items-center'>
-            <div className='flex items-center w-64 justify-between py-1.5 px-4 border-2 border-border rounded-sm mr-2 hover:shadow-md hover:shadow-reddish/40 hover:border-reddish'>
+            <div className='flex items-center w-56 justify-between py-1.5 px-4 border-2 border-border rounded-sm mr-2 hover:shadow-md hover:shadow-reddish/40 hover:border-reddish'>
               <input type="text" className='myCustomInput' placeholder='Search'/>
               <SearchIcon fontSize='small' sx={{color: 'gray.dark',}}/>
             </div>
@@ -47,17 +78,6 @@ const Navbar = () => {
             </IconButton>
           </div>
         </div>
-        <div className='flex items-center gap-6 pl-4 bg-white'>
-          <SubNavbarItem title="New Arrivals"/>
-          <SubNavbarItem title="Best Seller"/>
-          <SubNavbarItem title="Trending Items"/>
-          <SubNavbarItem title="Rings"/>
-          <SubNavbarItem title="Charms & Bracelets"/>
-          <SubNavbarItem title="Necklaces"/>
-          <SubNavbarItem title="Earings"/>
-          <SubNavbarItem title="Collections"/>
-          <SubNavbarItem title="All Items"/>
-        </div>
       </div>
   )
 }
@@ -66,11 +86,17 @@ export default Navbar;
 
 const SubNavbarItem = ({title}) => {
   return(
-    <div className='flex items-center pt-3 pb-3.5 cursor-pointer'>
-      <p className='text-sm font-serif hover:text-reddish hover:font-semibold'>
+    // <div className='flex items-center pt-3 pb-3.5 cursor-pointer'>
+    //   <p className='text-sm font-serif hover:text-reddish hover:font-semibold'>
+    //     {title} 
+    //   </p>
+    //   <KeyboardArrowDownOutlinedIcon fontSize='small' sx={{color: 'reddish.main'}}/>
+    // </div>
+    <div className='flex items-center pt-3 pb-3.5 px-3 cursor-pointer hover:border-b-2 border-reddish '>
+      <p className='text-sm font-serif font-semibold'>
         {title} 
       </p>
-      <KeyboardArrowDownOutlinedIcon fontSize='small' sx={{color: 'reddish.main'}}/>
+      {/* <KeyboardArrowDownOutlinedIcon fontSize='small' sx={{color: 'reddish.main'}}/> */}
     </div>
   )
 }
