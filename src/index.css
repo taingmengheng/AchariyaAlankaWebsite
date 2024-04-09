@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --default-text-color: #121420; /* Default text color */
+  --default-text-color: #111111; /* Default text color */
   --inputColor: #f0eefc;
   --purple: #491577;
   --yellow: #FCA311;
+  --reddish: #B00539;
 }
 
 body {
@@ -37,4 +38,17 @@ p {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+}
+
+.left-to-right-effect {
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  color: var(--default-text-color);
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.left-to-right-effect:hover {
+  box-shadow: inset 100px 0 0 0 var(--reddish);
+  color: white;
 }
