@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar';
 import BannerAtTheTop from './BannerAtTheTop';
 import LandingPageContent from './LandingPageContent';
+import Footer from './Footer';
 
 const LandingPage = () => {
   return (
@@ -9,6 +10,7 @@ const LandingPage = () => {
       <BannerAtTheTop />
       <Navbar />
       <LandingPageContent />
+      <Footer />
     </div>
   )
 }
