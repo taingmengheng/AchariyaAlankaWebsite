@@ -27,6 +27,7 @@ p {
   font-size: 14px;
   /* background-color: var(--inputColor); */
   font-family: Montserrat;
+  max-height: 20px;
 }
 
 .myCustomInput:focus {
