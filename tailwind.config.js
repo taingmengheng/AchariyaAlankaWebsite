@@ -18,9 +18,11 @@ export default {
       'gray-dark': '#5e5e5e',
       'gray': '#989EA1',
       'gray-light': '#a19fad',
+      'gray-lightest': '#E8E9EB',
       'border': '#dbe0dc', 
       'yellow': '#FCA311',
       'reddish': '#B00539',
+      'pink': '#EEC6E0',
       'black': '#333333',
       'purple': '#491577',
       'purple-light': '#f0eefc'
