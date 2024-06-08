@@ -36,13 +36,13 @@ const Navbar = () => {
             <img src="/OurLogoLetters(1).png" alt="AchariyaAlanakaLogo" />
           </div>
 
-          <div className='flex items-center bg-white'>
+          <div className='flex items-center bg-white h-full'>
             <SubNavbarItem title="New & Featured"/>
             <SubNavbarItem title="Rings"/>
             <SubNavbarItem title="Charms & Bracelets"/>
             <SubNavbarItem title="Necklaces"/>
             <SubNavbarItem title="Earings"/>
-            <SubNavbarItem title="All Items"/>
+            {/* <SubNavbarItem title="All Items"/> */}
           </div>
 
           <div className='flex items-center'>
