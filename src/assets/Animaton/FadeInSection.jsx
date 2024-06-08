@@ -1,21 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const FadeInSection = ({ delay, translateType, translateValue, children }) => {
+const FadeInSection = ({ translateType, translateValue, children }) => {
   const [isVisible, setVisible] = useState(false);
   const domRef = useRef();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
             setVisible(true);
-          }, delay);
-        } else {
-          setVisible(false); // Reset isVisible state when component is not visible
-        }
-      });
-    });
+          } else if (entry.boundingClientRect.top > 0) {
+            // Ensures the element remains visible once it's in the viewport
+            setVisible(false);
+          }
+        });
+      },
+      { threshold: 0.2 } // Adjust threshold as needed
+    );
 
     if (domRef.current) {
       observer.observe(domRef.current);
@@ -24,10 +26,9 @@ const FadeInSection = ({ delay, translateType, translateValue, children }) => {
     return () => {
       if (domRef.current) {
         observer.unobserve(domRef.current);
-        setVisible(false); // Reset isVisible state when component is unobserved
       }
     };
-  }, [delay]);
+  }, []);
 
   return (
     <div
