@@ -24,7 +24,7 @@ const divStyle = {
 };
 const slideImages = [
   {
-    url: "https://img.freepik.com/free-photo/wedding-bride-holding-pink-flower-bouquet_8353-6094.jpg?t=st=1712672807~exp=1712676407~hmac=d15fc26ec5a025466e570a1066c50eb64c936520125f57d380be6e13928a63fa&w=1060"
+    url: "https://images.unsplash.com/photo-1599458349289-18f0ee82e6ed?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     url: "https://images.unsplash.com/photo-1621334119886-cbc9e36fcf7c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -130,7 +130,7 @@ const LandingPageContent = () => {
       <div className="flex items-center justify-around pt-32 pb-4 px-4">
         <div className="max-w-96">
           <FadeInSection translateType="X" translateValue="-100px">
-            <img src="GroupPicture.png" alt="GroupPicture" />
+            <img loading="lazy" src="GroupPicture.png" alt="GroupPicture" />
           </FadeInSection>
         </div>
         <div className="w-6/12">
@@ -195,10 +195,10 @@ const LandingPageContent = () => {
       </div>
 
       <div className="w-full">
-        <img src="Banner (2).jpg" alt="Banner.png" width="100%" />
+        <img loading="lazy" src="Banner (2).jpg" alt="Banner.png" width="100%" />
       </div>
 
-      <div className="pt-32 pb-4 px-4">
+      <div className="pt-32 pb-32 px-4">
         <FadeInSection translateType="Y" translateValue="20px">
           <p className="font-elegant text-5xl font-semibold text-center mb-12">
             New Arrivals
@@ -211,6 +211,7 @@ const LandingPageContent = () => {
               <div className="cursor-pointer">
                 <div className="relative overflow-hidden">
                   <img 
+                  loading="lazy"
                   src="18k Jewelry/Necklace/Necklace (1).JPG" 
                   alt="Golden Necklace" 
                   className="transition-transform duration-500 transform-gpu hover:scale-110"
@@ -234,10 +235,11 @@ const LandingPageContent = () => {
             {
               jewelry.slice(0, 8).map((jewelry, idx) => (
                 <Grid key={jewelry.id} item lg={3}>
-                  <FadeInSection  delay={idx * 50} translateType="Y" translateValue="150px">
+                  <FadeInSection  delay={idx * 50} translateType="Y" translateValue="100px">
                     <div className="cursor-pointer">
                       <div className="relative overflow-hidden">  
                         <img 
+                        loading="lazy"
                         src={jewelry.images[0]} 
                         alt={jewelry.images[0]}
                         className="transition-transform duration-500 transform-gpu hover:scale-110"
@@ -250,7 +252,7 @@ const LandingPageContent = () => {
                         {/* <p className="font-semibold"v
                           ${jewelry.discountedPrice}
                         </p> */}
-                        <p className="font-semibold">
+                        <p className="mt-1 font-semibold">
                           ${jewelry.price}
                         </p>
                       </div>
@@ -262,6 +264,39 @@ const LandingPageContent = () => {
           </Grid>
         </Grid>
       </div>
+
+      <div className="flex items-center justify-around pb-32 px-4">
+        <div className="w-6/12">
+          <FadeInSection translateType="X" translateValue="100px">
+            <p className="font-elegant text-5xl font-semibold ">
+            Elevating Your Style with
+            </p>
+            <p className="font-elegant text-5xl font-semibold text-reddish mt-2">
+              Achariya Alanka
+            </p>
+            <div className="my-12">
+              <p className="text-serif text-gray.dark">
+                Experience uncompromising quality with Achariya Alanka's exquisite jewelry. We are dedicated to delivering superior craftsmanship and exceptional materials, ensuring each piece meets the highest standards of excellence. Elevate your style with our meticulously crafted creations, designed to bring sophistication and beauty to every moment.
+              </p>
+            </div>
+            <Button variant="text" color="reddish">
+              <p className="capitalize font-elegant text-lg font-bold">
+                Elevate Your Style
+              </p>
+              <EastIcon sx={{ fontSize: "18px", ml: "6px" }} />
+            </Button>
+          </FadeInSection>
+        </div>
+
+        <div className="max-w-96">
+          <FadeInSection translateType="X" translateValue="-100px">
+            <img 
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="GroupPicture" />
+          </FadeInSection>
+        </div>
+      </div>
+
     </div>
   );
 };
@@ -273,6 +308,7 @@ const StyledCategoryItem = ({ src, title }) => {
     <div>
       <div className="relative overflow-hidden">
         <img
+          loading="lazy"
           src={src}
           alt={src}
           className="transition-transform duration-500 transform-gpu hover:scale-110 hover:cursor-pointer"
